@@ -10,9 +10,7 @@
     "128": "icons/icon128.png"
   },
   "permissions": [
-    "storage",
-    "activeTab",
-    "scripting"
+    "storage"
   ],
   "action": {
     "default_icon": {
@@ -39,14 +37,6 @@
         "contentScript.js",
         "lib/otplib.buffer.min.js",
         "lib/otplib.index.min.js"
-      ]
-    }
-  ],
-  "web_accessible_resources": [
-    {
-      "resources": [],
-      "matches": [
-        "<all_urls>"
       ]
     }
   ]
