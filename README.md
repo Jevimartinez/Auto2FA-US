@@ -9,9 +9,18 @@
 - **Hace clic** en el botón de `Aceptar`, enviando el formulario.
 - **Almacena** el secret en `chrome.storage.local` para que no tengas que introducirlo de nuevo en el futuro.
 
-## Instalación
+## Instalación de la Extensión
 
-1. **Clonar** este repositorio o descargar el contenido.
+### Opción 1: (Fácil) Instalación desde la Chrome Web Store
+
+1. Visita [la página de Auto2FA-US en la Chrome Web Store](https://chromewebstore.google.com/detail/auto2fa-us/idjolbpjljhggpdpaabghlneamejpfff).
+2. Haz clic en **"Añadir a Chrome"**.
+3. Confirma la instalación cuando te lo solicite Chrome.
+4. La extensión aparecerá instalada automáticamente en tu navegador.
+
+### Opción 2: (Complicada) Instalación manual en modo desarrollador
+
+1. **Clonar** este repositorio o descargar los archivos en tu equipo.
 2. Ve a `chrome://extensions` en Google Chrome.
 3. Activa el **"Developer mode"** (modo desarrollador).
 4. Haz clic en **"Load unpacked"** y selecciona la carpeta del proyecto.
