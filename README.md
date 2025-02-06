@@ -6,7 +6,7 @@
 
 - **Genera automáticamente** el código TOTP (sha1, 6 dígitos, 30s).
 - **Detecta** y **Rellena** automáticamente el campo de 2FA en la página de login de la US.
-- **Hace clic** en el botón de `Aceptar`, enviando el formulario.
+- **Hace click** en el botón de `Aceptar`, enviando el formulario.
 - **Almacena** el secret en `chrome.storage.local` para que no tengas que introducirlo de nuevo en el futuro.
 
 ## Instalación de la Extensión
@@ -14,7 +14,7 @@
 ### Opción 1: (Fácil) Instalación desde la Chrome Web Store
 
 1. Visita [la página de Auto2FA-US en la Chrome Web Store](https://chromewebstore.google.com/detail/auto2fa-us/idjolbpjljhggpdpaabghlneamejpfff).
-2. Haz clic en **"Añadir a Chrome"**.
+2. Haz click en **"Añadir a Chrome"**.
 3. Confirma la instalación cuando te lo solicite Chrome.
 4. La extensión aparecerá instalada automáticamente en tu navegador.
 
@@ -23,7 +23,7 @@
 1. **Clonar** este repositorio o descargar los archivos en tu equipo.
 2. Ve a `chrome://extensions` en Google Chrome.
 3. Activa el **"Developer mode"** (modo desarrollador).
-4. Haz clic en **"Load unpacked"** y selecciona la carpeta del proyecto.
+4. Haz click en **"Load unpacked"** y selecciona la carpeta del proyecto.
 5. La extensión aparecerá listada con el nombre **Auto2FA-US**.
 
 ## Configuración del Secret
@@ -38,16 +38,23 @@ Para que la extensión pueda generar tu TOTP, necesita el **secret (en Base32)**
    - **Copia** el secret.
 
 2. **Introducir el secret en la extensión**
-   - En Chrome, haz **clic derecho** sobre el icono de la extensión **Auto2FA-US**.
-   - Selecciona **"Options"** (Opciones).
+   - En Chrome, haz **click** sobre el icono de la extensión **Auto2FA-US**.
    - En la página que se abre, pega tu **secret** en el campo de texto y pulsa **"Guardar"**.
+
+Eso es todo, a partir de ahora, cuando inicies sesión en cualquier página de la US, tu segundo factor de autentificación se rellenará solo.
+
+## Configuración extra
+
+- Haz **click derecho** sobre el icono de la extensión **Auto2FA-US**.
+- Selecciona **"Options"** (Opciones).
+- En la página que se abre, podrás acceder a tu **secret** y cambiar opciones de configuración como el **autocompletado** del código.
 
 ## Funcionamiento
 
 1. Cuando accedas a la **página de login** multifactor de la US, la extensión:
    - **Detectará** si existe el campo `#input2factor`.
    - **Generará** el código TOTP con la librería [otplib](https://github.com/yeojz/otplib).
-   - **Rellenará** el campo y **hará clic** automáticamente en el botón de `Aceptar`.
+   - **Rellenará** el campo y **hará click** automáticamente en el botón de `Aceptar`.
 
 2. Si el código es correcto, continuarás con el login normalmente.  
 3. Si el código es rechazado, la extensión **no** reintentará indefinidamente (evitando bucles).

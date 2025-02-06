@@ -1,6 +1,13 @@
 // contentScript.js
 
-(async function() {
+(async function () {
+  // Check if autofill is enabled
+  const autofillEnabled = await getStoredAutofill();
+  if (!autofillEnabled) {
+    console.log("El autocompletado está deshabilitado.");
+    return;
+  }
+
   // 1. Locate input textbox and accept button
   const codeInput = document.querySelector("#input2factor");
   const loginButton = document.querySelector("#notification_2factor_button_ok");
@@ -51,12 +58,20 @@
 })();
 
 // ---------------------------------------
-// Aux function to get the secret
+// Aux functions to get read localstorage
 // ---------------------------------------
 function getStoredSecret() {
   return new Promise((resolve) => {
     chrome.runtime.sendMessage({ action: "GET_SECRET" }, (response) => {
       resolve(response?.secret || null);
+    });
+  });
+}
+
+function getStoredAutofill() {
+  return new Promise((resolve) => {
+    chrome.runtime.sendMessage({ action: "GET_AUTOFILL" }, (response) => {
+      resolve(response?.autofill);
     });
   });
 }

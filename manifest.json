@@ -1,6 +1,6 @@
 {
   "name": "Auto2FA-US",
-  "version": "1.0",
+  "version": "2.0.0",
   "description": "Extensión que autocompleta el segundo factor de autenticación en la página de login de la US.",
   "manifest_version": 3,
   "author": "Jevimartinez",
@@ -13,6 +13,7 @@
     "storage"
   ],
   "action": {
+    "default_popup": "popup.html",
     "default_icon": {
       "16": "icons/icon16.png",
       "32": "icons/icon32.png",
@@ -22,7 +23,8 @@
     "default_title": "Auto2FA-US"
   },
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "background.js",
+    "type": "module"
   },
   "options_ui": {
     "page": "options.html",

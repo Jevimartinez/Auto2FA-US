@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Auto2FA-US</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
+  <style>
+    body {
+      background-color: #212529;
+      width: 350px;
+      height: 350px;
+      overflow: hidden;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      margin-top: 40px;
+      margin-bottom: 40px;
+      margin-right: 40px;
+      margin-left: 40px;
+    }
+
+    .tutorial-text {
+      text-align: center;
+      font-size: small;
+    }
+
+    .totpcode {
+      font-size: 2rem;
+    }
+
+    .input-group-text {
+      cursor: pointer;
+    }
+
+    .input-group-text:hover {
+      background-color: var(--bs-secondary-bg);
+    }
+
+    .theme-toggle {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      border: 1px solid var(--bs-border-color);
+      font-size: 1rem;
+      border-radius: 10px;
+      padding: 5px 10px;
+      transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+      display: block;
+    }
+
+    .theme-toggle:hover {
+      background-color: var(--bs-secondary-bg);
+      border-color: var(--bs-border-color);
+    }
+
+    .theme-toggle:active {
+      background-color: var(--bs-secondary-bg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container" data-bs-theme="dark">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <button id="themeToggle" class="theme-toggle input-group-text">
+          <i class="bi bi-sun"></i>
+        </button>
+        <h3 class="card-title text-center mb-3">Código 2FA</h3>
+        <p class=" text-center fs-4 fw-bold"><kbd id="TOTPfield" class="totpcode">••••••</kbd></p>
+        <button id="copyBtn" class="btn btn-primary w-100">Copiar Código</button>
+        <div class="alert alert-primary mt-3 d-none" id="clipboardAlertBox"></div>
+        <p class="mt-2 text-muted text-center">Tiempo restante: <span id="remainingTimeField">30s</span></p>
+        <hr>
+        <h5 class="text-center">Vincular 2FA</h5>
+        <div class="mb-3">
+          <p class="card-text tutorial-text d-none" id="tutorialText">
+            Ve a este <a href="https://2fa.us.es/a2f/site/manager" target="_blank">enlace</a> <i
+              class="bi bi-arrow-right"></i> <span class="text-primary">"Gestionar"</span> <i
+              class="bi bi-arrow-right"></i> <span class="text-primary">"Añadir nuevo
+              dispositivo"</span> <i class="bi bi-arrow-right"></i> <span class="text-primary">"Mostrar"</span> <i
+              class="bi bi-arrow-right"></i> <span class="text-primary">"Mostrar parámetros de configuración"</span>.
+            Copia el secreto o clave y pégalo
+            abajo.
+          </p>
+          <label for="secretInput" class="form-label">Secret (Base32)</label>
+          <div class="input-group">
+            <input type="password" class="form-control" id="secretInput" placeholder="Ej: JBSWY3DPEHPK3PXP" />
+            <span class="input-group-text" id="toggleSecret"><i class="bi bi-eye-slash"></i></span>
+          </div>
+        </div>
+        <button id="saveBtn" class="btn btn-success w-100">Guardar Secret</button>
+      </div>
+      <div class="alert alert-danger mt-3 d-none" id="linkAlertBox"></div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>
