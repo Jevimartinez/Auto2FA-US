@@ -2,9 +2,7 @@
 
 **Auto2FA-US** es una extensión para **Google Chrome** que autocompleta el segundo factor de autenticación (TOTP) en la página de login multifactor de la Universidad de Sevilla, evitando tener que teclear el código manualmente cada vez.
 
-***
 **Nota:** Para la versión de **Firefox**, visita [Auto2FA-US-firefox](https://github.com/Jevimartinez/Auto2FA-US-firefox).
-***
 
 ---
 
