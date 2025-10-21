@@ -21,13 +21,12 @@
 ### Opción 2: (Complicada) Instalación manual en modo desarrollador
 
 1. **Clonar** este repositorio o descargar los archivos en tu equipo.
-2. Abre la carpeta **manifests**, y copia el manifest del navegador que estés usando (Firefox o chrome)
 
 Si estas en chrome:
-3. Ve a `chrome://extensions` en Google Chrome.
-4. Activa el **"Developer mode"** (modo desarrollador).
-5. Haz click en **"Load unpacked"** y selecciona la carpeta del proyecto.
-6. La extensión aparecerá listada con el nombre **Auto2FA-US**.
+2. Ve a `chrome://extensions` en Google Chrome.
+3. Activa el **"Developer mode"** (modo desarrollador).
+4. Haz click en **"Load unpacked"** y selecciona la carpeta del proyecto.
+5. La extensión aparecerá listada con el nombre **Auto2FA-US**.
 
 ## Configuración del Secret
 
